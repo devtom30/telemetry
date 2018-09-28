@@ -22,7 +22,26 @@ return $config = [
             ]
         ],
         'schema' => [
-            'plugins' => false
+            'plugins' => false,
+            'usage' => [
+                'num_users'       => [
+                    'type'      => 'string',
+                    'required'  => true
+                ],
+                'num_documents'  => [
+                    'type'      => 'string',
+                    'required'  => true
+                ],
+                'num_documents_per_user'   => [
+                    'type'      => 'string',
+                    'required'  => true
+                ]
+            ]
+        ],
+        'mapping' => [
+            'num_users'       => 'glpi_avg_entities',
+            'num_documents' => 'glpi_avg_computers',
+            'num_documents_per_user'  => 'glpi_avg_networkequipments'
         ]
     ],
    'baseurl' => 'http://localhost/telemetry/',
