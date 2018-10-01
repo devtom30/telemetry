@@ -85,7 +85,7 @@
       <div class="chart chart-2">
       {% set vars = {'chart': {
                         'id':    'php_versions',
-                        'title': 'PHP versions',
+                        'title': php_versions_title|default('PHP versions'),
                         'text':  'Grouped on major versions',
                         'data':  php_versions
                      }} %}
