@@ -1,0 +1,16 @@
+{% extends "default/telemetry.html.twig" %}
+
+{% block header %}
+{% set header_text = 'Since Kimios 1.1 release, we collect anonymous
+             <a id="register" href="#" data-toggle="modal" data-target="#json_data_example">data</a>.
+Here is some representation of these data.
+             <br>
+             As we don&apos;t have many data at the moment, the charts will be temporary simple. We&apos;ll complete this page soon.'
+    %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+    {% set versionchart_text = '<i class="fa fa-exclamation-circle"></i> No data for versions prior to 1.1' %}
+    {{ parent() }}
+{% endblock %}
