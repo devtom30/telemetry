@@ -51,7 +51,9 @@ class Telemetry extends ControllerAbstract
             $dashboard['nb_reference_entries'] = json_encode($nb_ref_entries);
         }
 
-        if ($dashboard['php_versions'] === 'bar') {
+        if ($dashboard['php_versions']
+            && $dashboard['php_versions']['chart_type']
+            && $dashboard['php_versions']['chart_type'] === 'bar') {
             // retrieve php versions -- bar
             $raw_php_versions = TelemetryModel::select(
                 DB::raw("split_part(php_version, '.', 1) || '.' || split_part(php_version, '.', 2) as version,
@@ -70,7 +72,10 @@ class Telemetry extends ControllerAbstract
             ];
 
             foreach ($raw_php_versions as $php_version) {
-                $php_versions_series['x'][] = 'PHP ' . $php_version['version'];
+                $php_versions_series['x'][] = ($dashboard['php_versions']['language_name'] ?
+                    $dashboard['php_versions']['language_name'] :
+                    'PHP')
+                    . ' ' . $php_version['version'];
                 $php_versions_series['y'][] = $php_version['total'];
             }
             $dashboard['php_versions'] = json_encode([$php_versions_series]);
@@ -115,7 +120,10 @@ class Telemetry extends ControllerAbstract
                     }
                 }
                 $php_versions_series[] = [
-                    'name' => "PHP ".$version_name,
+                    'name' => ($dashboard['php_versions']['language_name'] ?
+                          $dashboard['php_versions']['language_name'] :
+                          'PHP')
+                          . ' ' . $version_name,
                     'y'    => $y_data,
                     'x'    => $x_data,
                     'mode' => 'lines+markers',
