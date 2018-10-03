@@ -8,7 +8,9 @@ return $config = [
           'leaflet' => [
              'provider'  => 'OpenStreetMap.BlackAndWhite'
           ],
-
+          'php_versions' => {
+              'language_name' => 'Java'
+          }
        ],
         'enable_contact' => false,
         'references' => [
