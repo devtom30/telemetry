@@ -13,14 +13,14 @@ return $config = [
           }
        ],
         'enable_contact' => false,
-        'references' => [
+        'dyn_references' => [
             'num_users' => [
                 'label' => 'Number of users',
-                'short label' => 'Users'
+                'short_label' => '#Users'
             ],
             'num_documents' => [
                 'label' => 'Number of documents',
-                'short label' => 'Documents'
+                'short_label' => '#Documents'
             ]
         ],
         'schema' => [
