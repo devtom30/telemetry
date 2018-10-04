@@ -136,7 +136,7 @@
       <div class="chart">
       {% set vars = {'chart': {
                         'id':    'web_engines',
-                        'title': 'Web engines',
+                        'title': web_engines_title|default('Web engines'),
                         'text':  '',
                         'data':  web_engines
                      }} %}
