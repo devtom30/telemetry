@@ -52,7 +52,7 @@ class Telemetry extends ControllerAbstract
         }
 
         if ($dashboard['php_versions']
-            && $dashboard['php_versions']['chart_type']
+            && array_key_exists('chart_type', $dashboard['php_versions'])
             && $dashboard['php_versions']['chart_type'] === 'bar') {
             // retrieve php versions -- bar
             $raw_php_versions = TelemetryModel::select(
