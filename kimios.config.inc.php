@@ -27,7 +27,7 @@ return $config = [
             'plugins' => false,
             'usage' => [
                 'num_users'       => [
-                    'type'      => 'string',
+                    'type'      => 'integer',
                     'required'  => true
                 ],
                 'num_documents'  => [
