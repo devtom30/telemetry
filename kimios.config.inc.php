@@ -8,9 +8,9 @@ return $config = [
           'leaflet' => [
              'provider'  => 'OpenStreetMap.BlackAndWhite'
           ],
-          'php_versions' => {
+          'php_versions' => [
               'language_name' => 'Java'
-          }
+          ]
        ],
         'enable_contact' => false,
         'dyn_references' => [
@@ -31,11 +31,11 @@ return $config = [
                     'required'  => true
                 ],
                 'num_documents'  => [
-                    'type'      => 'string',
+                    'type'      => 'integer',
                     'required'  => true
                 ],
                 'num_documents_per_user'   => [
-                    'type'      => 'string',
+                    'type'      => 'integer',
                     'required'  => true
                 ]
             ]
